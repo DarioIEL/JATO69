@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Collegamento al File CSS -->
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Ctrl + c == COPIA 
+         Ctrl + x == TAGLIA
+         Ctrl + v == INCOLLA
+         Ctrl + z == INDIETRO-->
+    
+    <!-- path relativo -->
+    <a href="./index.html">Home</a>
+    <a href="./pages/chiSiamo.html"> Chi Siamo</a>
+    <!-- ctrl + click sul path e verrà creato il file o la cartella  -->
+    <a href="./pages/contatti.html">Contatti</a>
+
+    
+    <h1>Lezione 2</h1>
+
+    <p>In questa lezione impareremo ad utilizzare il tag a e collegare degli script esterni </p>
+
+
+    <!-- path assoluto -->
+    <a href="https://generation.instructure.com/courses/1553" target="_blank" title="Generation Italy"> Link alla pagina di Generation </a>
+
+    <br>
+
+    <a href="https://it.wikipedia.org/wiki/Torino" title="Vai alla pagina wiki Torino" target="_blank">
+        <!-- Inserisco un'immagine con path assoluto nell'attributo src -->
+        <img src="https://www.italia.it/content/dam/tdh/it/interests/piemonte/torino/torino/media/20220404151121-torino-piemonte-shutterstock-2114229329.jpg.transform/w_1600/h_900/image.jpeg" alt="Veduta di piazza San Carlo a Torino al tramonto" width="200px" height="auto">
+    </a>
+
+
+    <a href="https://it.wikipedia.org/wiki/Napoli" title="Vai alla pagina wiki Napoli" target="_blank">
+        <!-- path relativo -->
+        <img src="./img/vedutaGolfoDiNapoli.png" alt="Veduta del golfo di Napoli da via Orazio" width="200px" height="auto">    
+    </a>
+    
+
+    <hr>
+    
+    <h2>Utilizzo degli id</h2>
+    <p>Id sta per identificativo, deve perciò essere <b>UNIVOCO</b>. Per richiamare un particolare id nel CSS utilizzerò #nomeID (es. #primoParag, ecc ecc) </p>
+
+    <p id="primoParag">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui earum sunt rem libero, veniam voluptatibus adipisci possimus ad reprehenderit tenetur delectus voluptatem quo accusamus vero nobis consectetur! Sequi non facilis eius! Quibusdam natus nisi voluptatibus blanditiis, quisquam porro quis, dolor hic quam magni inventore. Maiores ipsam autem omnis deserunt? Error.</p>
+
+    <hr>
+    
+    <p id="secondoParag">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui earum sunt rem libero, veniam voluptatibus adipisci possimus ad reprehenderit tenetur delectus voluptatem quo accusamus vero nobis consectetur! Sequi non facilis eius! Quibusdam natus nisi voluptatibus blanditiis, quisquam porro quis, dolor hic quam magni inventore. Maiores ipsam autem omnis deserunt? Error.</p>
+    
+    <hr>
+    
+    <p id="terzoParag">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui earum sunt rem libero, veniam voluptatibus adipisci possimus ad reprehenderit tenetur delectus voluptatem quo accusamus vero nobis consectetur! Sequi non facilis eius! Quibusdam natus nisi voluptatibus blanditiis, quisquam porro quis, dolor hic quam magni inventore. Maiores ipsam autem omnis deserunt? Error.</p>
+
+
+    <!-- IL FILE JS va collegato prima della chiusura del body. Potrebbe essere collego anche nella head ma a Google, a Dario e Milo non piace -->
+    <script src="./js/script.js"></script>
+</body>
+</html>

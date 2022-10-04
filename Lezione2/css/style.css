@@ -1,0 +1,33 @@
+/* Commentare nel css
+Nel CSS fornisco regole di stile al mio html */
+
+/* Recupero attraverso il nome tag TUTTI gli elementi html H1 */
+h1{
+    color: orange;
+}
+
+/* Recupero i singoli id */
+#primoParag{
+    color: darkblue;
+}
+
+#secondoParag{
+    color:tomato;
+}
+
+#terzoParag{
+    color:purple;
+}
+
+/* CLASSI identificate dal .nomeClasse */
+.textYellow{
+    color: yellowgreen;
+}
+
+.textRed{
+    color:red;
+}
+
+.fontAlt{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
