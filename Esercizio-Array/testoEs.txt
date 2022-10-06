@@ -1,0 +1,14 @@
+Componi la tua libreria o cineteca
+Ordina gli elementi alfabeticamente
+Componi un array e stampa gli elementi all'interno di un tag LI.
+
+Al fondo della lista stampa il numero totale di elementi
+
+Crea un "prezzario" e associa ad ogni elemento il suo prezzo
+
+- Non ci resta che piangere - € 3.50
+
+Presenta i tuoi dati personali al fondo della pagina + avatar
+
+Inserisci per i contenuti testuali un font Sans-serif e un titolo colorato
+Avatar tondo.
