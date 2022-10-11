@@ -7,9 +7,9 @@ var colori = ["bianco", "verde", "viola", "blu"];
 // var mioArray = ["Dario", "Mennillo", 33, true, "Torino"]; //Fattibile ma poco senso logico
 // console.log(mioArray);
 
-// var estrazioneLotto = [13, 4, 22, 90, 87, 45, 67];
+//  var estrazioneLotto = [13, 4, 22, 90, 87, 45, 67];
 
-// var presenzeStudenti = [true, false, false, true, true]
+//  var presenzeStudenti = [true, false, false, true, true]
 
 //riassegno un valore ad un elemento
 colori[2] = "arancione";

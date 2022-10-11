@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 id="titolo"></h1>
+    <p id="paragrafo"></p>
+    <p id="altroParagrafo"></p>
+    <p id="ultimoParagrafo"></p>
+
+    <img id="miaImg" src="" alt="">
+
+
+    <script>
+        var titolo = document.getElementById('titolo');
+        titolo.innerHTML = "Titolo della pagina"; // innerHTML serve per scrivere all'interno dell'apertura e della chiusura del tag
+
+        var paragrafo = document.getElementById('paragrafo');
+        paragrafo.innerHTML = "Questo è il paragrafo della pagina";
+
+        var altroParagrafo = document.getElementById('altroParagrafo');
+        altroParagrafo.innerHTML = "Questo è l'altro paragrafo";
+
+        document.getElementById('ultimoParagrafo').innerHTML = "Questo è l'ultimo paragrafo";
+
+        var miaImg = document.getElementById('miaImg');
+        miaImg.src = "./img/img.png" //.src modifico l'attributo src dell'immagine
+        //miaImg.setAttribute('src', './img/img.png'); //questo poi
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+Crea uno script per generare 6 numeri casuali da 1 a 90, senza ripetizioni.
+
+Stampa all'interno di un pagina html il risultato dell'estrazione, ogni numero deve essere dentro un pallino con lo sfondo colorato. In orizzontale, affiancati. 
+
+

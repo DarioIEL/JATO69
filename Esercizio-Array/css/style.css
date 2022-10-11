@@ -1,0 +1,10 @@
+.titleColor{
+    color: red;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.roundImg{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
