@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // var numeriEstratti = [];
+        // var numeriDoppione = [];
+
+        // for(var i = 0; i <= 5; i++){
+        //     var numero = Math.ceil( Math.random() * 90 );
+        //     if(numeriEstratti.indexOf(numero) != -1 ){
+        //         //fai qualcosa, rifai il giro, rifai l'estrazione
+        //         i--;
+        //         numeriDoppione.push(numero);
+        //     }else{
+        //         numeriEstratti.push(numero);
+        //     }
+        // }
+
+        // console.log(numeriEstratti);
+        // console.log(numeriDoppione);
+
+        // var arrTest = [2,6,78,3,24];
+        // console.log(arrTest.indexOf(7));
+
+        //////////////////////////////////cambia solo ==-1 nel metodo indexOf()
+
+        // var numeriEstratti = [];
+        // for(var i = 0; i <= 5; i++){
+        //     var numero = Math.ceil( Math.random() * 90 );
+        //     if(numeriEstratti.indexOf(numero) == -1 ){
+        //         numeriEstratti.push(numero);         
+        //     }else{
+        //         //fai qualcosa, rifai il giro, rifai l'estrazione
+        //         i--;
+        //     }
+        // }
+        // console.log(numeriEstratti);
+   
+        ////////////////////////////////Per i posteri/////////////////////alternativa SPLICE
+        
+        var numeri = [];
+
+
+        for(var i = 0; i < 90; i++){
+            numeri.push(i+1);
+        }
+
+        console.log(numeri);
+        //numeri.splice(20,1);
+
+        var numeriEstratti = [];
+
+        for(var i = 0; i < 90; i++){
+            var numero = Math.floor(Math.random() * numeri.length);
+            numeriEstratti.push(numeri[numero]);
+            numeri.splice(numero, 1);
+        }
+        console.log(numeriEstratti);
+
+
+
+
+    </script>
+</body>
+</html>

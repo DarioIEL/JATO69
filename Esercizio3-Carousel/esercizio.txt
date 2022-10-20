@@ -1,0 +1,7 @@
+Simulare un carousel
+
+Imposta un'immagine di partenza. Al click sul pulsante l'immagine verrà sostituita con un'altra, fino al fondo dell'array e ritorno.
+
+Pulsante NO '00 (anni 2000), cambia di aspetto al passaggio del cursore.
+Immagini delle stesse dimensioni.
+
