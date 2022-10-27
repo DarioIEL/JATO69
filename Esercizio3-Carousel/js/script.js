@@ -4,6 +4,23 @@ var immagini = [
     './img/Dino3.webp',
 ];
 
-var elImmagine = document.getElementById('immagine');
+var immagine = document.getElementById('immagine');
 
-elImmagine.innerHTML = "<img id='immagineDino' src='" + immagini[2] +"' >";
+contatore = 0;
+
+function mostraImg(contatore){
+    immagine.innerHTML = "<img class='dimImg' src='" + immagini[contatore] +"'>";
+}
+
+mostraImg(contatore);
+
+
+function ruotaFoto(){
+    contatore++;
+    
+    if(contatore == immagini.length){
+        contatore = 0;
+    }
+
+    mostraImg(contatore);
+}
