@@ -24,6 +24,6 @@ function calcolaDimensioni(){
     console.log("La misura vale: " + misura);
 }
 
-//console.log(misura); //misura all'esterno non è visibile
+console.log(misura); //misura all'esterno non è visibile
 
 calcolaDimensioni();

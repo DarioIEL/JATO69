@@ -1,5 +1,5 @@
 function scriviInConsole(){
-    console.log('Andiamo in PAUSA');
+    console.log('iao ragazzi');
     // demo.innerHTML = "<p>Andiamo in PAUSA</p>";
     demo.innerHTML += "<p>Andiamo in PAUSA</p>";
     contatore++;
