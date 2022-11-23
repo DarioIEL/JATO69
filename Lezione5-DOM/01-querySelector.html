@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    
+    <h1>Lista della spesa</h1>
+    <ul id="listaSpesa">
+
+        <li class="txtViola">Frutta</li>
+        <li class="txtViola">Nutella</li>
+        <li class="txtViola">Broccoli</li>
+        <li class="txtViola">Birra e Vino</li>
+        <li class="txtViola">Pesce</li>
+        <li class="txtViola">Carne</li>
+        
+    </ul>
+
+    <h2>Lista cose da fare</h2>
+    <ul id="listaCoseDaFare">
+        <li>Dentista</li>
+        <li>Cinema</li>
+        <li>Studio</li>
+        <li>Leggo</li>
+    </ul>
+
+    <div id="demo" class="txtViola grassetto">
+        <p>Ciao</p>
+    </div>
+
+    <script>
+        // var listaSpesa = document.getElementById('listaSpesa').children; //traversing       
+        // listaSpesa[0].classList.add('grassetto'); //manipolazione
+        // console.log(listaSpesa);
+        
+        //querySelector - prende 1 elemento attraverso la sintassi css ma recupera solo ed esclusivamente la prima occorrenza
+        var listaSpesa = document.querySelector('ul').children;
+        // listaSpesa[0].classList.add('grassetto');
+        //aggiungo il grassetto a tutti
+        console.log(listaSpesa);
+        
+        // for (let i = 0; i < listaSpesa.length; i++) {
+        //     listaSpesa[i].classList.add('grassetto');
+        // }
+
+        //operatore [...Collection] copia la collection dentro un array
+
+        [...listaSpesa].forEach(element => {
+            element.classList.add('grassetto');
+            element.classList.remove('txtViola');
+        })
+
+
+        var li = document.querySelector('li').textContent;
+        console.log(li);
+
+
+        //querySelectorAll - prende più elementi e produce una NodeList, da trattare come un "normalissimo Array"
+        var lisTxtViola = document.querySelectorAll('li.txtViola');
+        console.log(lisTxtViola);
+
+        var liSenzaClass = document.querySelectorAll('ul#listaCoseDaFare li'); 
+        
+        // for(var i = 0; i < liSenzaClass.length; i++){
+        //     liSenzaClass[i].className = 'txtOrange';
+        // }
+
+        console.log(liSenzaClass);
+        
+        [...liSenzaClass].forEach(element => {
+            element.className = 'txtOrange';
+        });
+
+        
+        var demo = document.querySelector('#demo');
+        //classList individua la lista delle classi
+        demo.classList.add('carattereBIG')
+        demo.classList.replace('txtViola', 'txtOrange');
+        demo.classList.remove('grassetto');
+
+        //className mette una classe da 0, cancellando tutto il precedente 
+        // demo.className = 'txtOrange';
+
+        console.log(demo.classList);
+
+
+
+        // var animali = ['cane', 'gatto', 'coniglio'];
+
+        // [...animali].forEach(animale =>{
+        //     console.log(animale);
+        // });
+        
+        // var persona = {
+        //     nome: "Paola",
+        //     cognome: "Bianchi",
+        //     eta: 30
+        // }
+        
+        // //for - in è un for strano che si applica agli oggetti, per natura NON ITERABLE
+        // for (const key in persona) {
+        //         const element = persona[key];
+        //         console.log(element);                
+        // }
+
+    </script>
+</body>
+</html>

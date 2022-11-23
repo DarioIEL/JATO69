@@ -1,0 +1,20 @@
+.txtViola{
+    color: purple;
+}
+
+.grassetto{
+    font-weight: bolder;
+}
+
+.txtOrange {
+    color: orange;
+}
+
+
+.carattereBIG{
+    font-size: 50px;
+}
+
+.txtBarrato{
+    text-decoration: line-through;
+}

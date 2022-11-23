@@ -62,7 +62,8 @@ function controllaCampi(nome, cognome, email, matricola) {
         feed.innerHTML = "Caro utente, i dati sono stati salvati !";
         return true;
     }else{
-        var campiDimenticati = ''
+        var campiDimenticati = '';
+        
         if(nome == ''){
             campiDimenticati += "nome ";
         }
