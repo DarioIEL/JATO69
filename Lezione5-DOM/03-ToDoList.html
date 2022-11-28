@@ -36,12 +36,29 @@
 
             //oggi faccio così
             var li = document.createElement('li');
-            li.textContent = toDo;
+            li.innerHTML = "<span>" + toDo + "</span>";
 
             li.onclick = function(){
-                li.setAttribute('class', 'txtBarrato');
+                //li.firstElementChild.setAttribute('class', 'txtBarrato');
+              li.firstElementChild.classList.toggle('txtBarrato'); //toogle fa da interruttore sulla classe
+            }
+            
+            //creare il pulsante per eliminare
+
+            var elimNode = document.createElement('span');
+            elimNode.innerHTML = " X ";
+
+            elimNode.onclick = function(){
+                //questa funzione elimina tutto li
+                li.setAttribute('class', 'animate__animated animate__fadeOutLeft');
+                
+                //dopo due secondi esegui questa sotto
+                setTimeout(() => {
+                    demo.removeChild(li);}, 500);
+
             }
 
+            li.appendChild(elimNode);
 
             //crea un pulsante e al click rimuovi l'elemento applicando la classe fadeOutLeft di animate.css
             //alla fine, trasformate la X in un cestino utilizzando www.fontawesome.com
@@ -49,7 +66,8 @@
             demo.appendChild(li);
         }
 
-        btn.addEventListener('click', aggiungiCosa, false);       
+        btn.addEventListener('click', aggiungiCosa); //false comunque
+        
     </script>
 </body>
 </html>

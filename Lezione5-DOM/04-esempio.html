@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Superstar</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <h1>Cinema Superstar</h1>
+
+    <div class="container">
+
+        <h2 id="titolo"></h2>
+
+        <figure>
+            <img id="locandina" class="imgDim" src="" alt="">
+        </figure>
+
+        <ul id="attori"></ul>
+
+        <p id="durata"></p>
+        <p id="anno"></p>
+        <p id="genere"></p>
+        <button id="prev">Indietro</button>
+        <button id="next">Avanti</button>
+
+    </div>
+
+    <script>
+        var films = [
+            {
+                titolo: "Il buono, il brutto e il cattivo",
+                durata: 120,
+                anno: 1967,
+                locandina: "https://movieplayer.net-cdn.it/t/images/2014/06/12/buonobruttocattivo_jpg_400x0_crop_q85.jpg",
+                genere: ['western', 'drammatico'],
+                attori: ['Clint Eastwood', 'Lee van Cleef', 'Gian Maria Volontè']
+            },
+            {
+                titolo: "Tre uomini e una gamba",
+                durata: 100,
+                anno: 1997,
+                locandina: "https://m.media-amazon.com/images/I/71g7bXFYMZL._SL1000_.jpg",
+                genere: ['commedia'],
+                attori: ['Aldo Baglio', 'Giovanni Storti', 'Giacomino Poretti']
+            },
+            {
+                titolo: "Matrix",
+                durata: 180,
+                anno: 1999,
+                locandina: "https://www.warnerbros.it/wp-content/uploads/2015/09/Matrix_Poster.jpg",
+                genere: ['Scifi', 'drammatico'],
+                attori: ['Keanu Reeves', 'Carrie-Ann Moss', 'Laurence Fishbourne', 'Hugo Weaving']                
+
+            }
+        ];
+
+
+        var titolo = document.querySelector('#titolo');
+        var locandina = document.querySelector('#locandina');
+        var durata = document.querySelector('#durata');
+        var attori = document.querySelector('#attori');
+        var anno = document.querySelector('#anno');
+        var genere = document.querySelector('#genere');
+
+        
+
+        /**
+         * @input index = indice array
+         **/          
+        function mostraFilm(index){
+            titolo.textContent = films[index].titolo;
+
+            locandina.setAttribute('src', films[index].locandina);
+            locandina.setAttribute('alt', 'Locandina film in sala: ' + films[index].titolo);
+
+            anno.textContent = "Anno prima uscita: " + films[index].anno;
+
+            attori.innerHTML = '';
+            films[index].attori.forEach(attore => {
+                attori.innerHTML += "<li>" + attore + "</li>";
+            });
+
+            genere.innerHTML = '';
+            films[index].genere.forEach(genereFilm => {
+                genere.innerHTML += genereFilm + " ";
+            });
+        } 
+
+        var contatore = 0;
+
+        mostraFilm(contatore);
+
+        var btnPrev = document.querySelector('#prev');
+        var btnNext = document.querySelector('#next');
+
+        function nextMovie(){
+            contatore++;
+            mostraFilm(contatore);
+        }
+
+        function prevMovie(){
+            contatore--;
+            mostraFilm(contatore);
+        }
+
+        btnPrev.addEventListener('click', prevMovie);
+
+        btnNext.addEventListener('click', nextMovie);
+
+
+
+
+    </script>
+</body>
+</html>

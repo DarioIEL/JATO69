@@ -18,3 +18,8 @@
 .txtBarrato{
     text-decoration: line-through;
 }
+
+.imgDim{
+    height: 200px;
+    width: auto;
+}
