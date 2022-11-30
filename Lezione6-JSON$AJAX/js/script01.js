@@ -77,11 +77,24 @@ var obj = JSON.parse(objRicevuto);
 console.log(obj);
 
 //voglio aggiungere un metodo a obj
-obj.prototype.annullaPresenza = function(){
+function ObjCostruttore(nome, cognome, presenza){
+    this.nome = nome;
+    this.cognome = cognome;
+    this.presenza = presenza;
+    // this.annullaPresenza = function( ){
+    //     !this.presenza;
+    // }
+}
+
+var objVero = new ObjCostruttore(obj.nome, obj.cognome, obj.presenza);
+
+
+ObjCostruttore.prototype.annullaPresenza = function(){
     this.presenza = false;
 }
 
+objVero.annullaPresenza();
 
-console.log(obj);
+console.log(objVero);
 
 
