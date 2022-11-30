@@ -13,8 +13,12 @@
 
     <div class="container">
 
-        <h2 id="titolo"></h2>
-
+        <a href="">
+            <h2 id="titolo">
+                
+            </h2>
+        </a>
+            
         <figure>
             <img id="locandina" class="imgDim" src="" alt="">
         </figure>
@@ -36,35 +40,35 @@
                 durata: 120,
                 anno: 1967,
                 locandina: "https://movieplayer.net-cdn.it/t/images/2014/06/12/buonobruttocattivo_jpg_400x0_crop_q85.jpg",
-                genere: ['western', 'drammatico'],
-                attori: ['Clint Eastwood', 'Lee van Cleef', 'Gian Maria Volontè']
+                genere: ["western", "drammatico"],
+                attori: ["Clint Eastwood", "Lee van Cleef", "Gian Maria Volontè"]
             },
             {
                 titolo: "Tre uomini e una gamba",
                 durata: 100,
                 anno: 1997,
                 locandina: "https://m.media-amazon.com/images/I/71g7bXFYMZL._SL1000_.jpg",
-                genere: ['commedia'],
-                attori: ['Aldo Baglio', 'Giovanni Storti', 'Giacomino Poretti']
+                genere: ["commedia"],
+                attori: ["Aldo Baglio", "Giovanni Storti", "Giacomino Poretti"]
             },
             {
                 titolo: "Matrix",
                 durata: 180,
                 anno: 1999,
                 locandina: "https://www.warnerbros.it/wp-content/uploads/2015/09/Matrix_Poster.jpg",
-                genere: ['Scifi', 'drammatico'],
-                attori: ['Keanu Reeves', 'Carrie-Ann Moss', 'Laurence Fishbourne', 'Hugo Weaving']                
+                genere: ["Scifi", "drammatico"],
+                attori: ["Keanu Reeves", "Carrie-Ann Moss", "Laurence Fishbourne", "Hugo Weaving"]                
 
             }
         ];
 
 
-        var titolo = document.querySelector('#titolo');
-        var locandina = document.querySelector('#locandina');
-        var durata = document.querySelector('#durata');
-        var attori = document.querySelector('#attori');
-        var anno = document.querySelector('#anno');
-        var genere = document.querySelector('#genere');
+        var titolo = document.querySelector("#titolo");
+        var locandina = document.querySelector("#locandina");
+        var durata = document.querySelector("#durata");
+        var attori = document.querySelector("#attori");
+        var anno = document.querySelector("#anno");
+        var genere = document.querySelector("#genere");
 
         
 
@@ -74,17 +78,17 @@
         function mostraFilm(index){
             titolo.textContent = films[index].titolo;
 
-            locandina.setAttribute('src', films[index].locandina);
-            locandina.setAttribute('alt', 'Locandina film in sala: ' + films[index].titolo);
+            locandina.setAttribute("src", films[index].locandina);
+            locandina.setAttribute("alt", "Locandina film in sala: " + films[index].titolo);
 
             anno.textContent = "Anno prima uscita: " + films[index].anno;
 
-            attori.innerHTML = '';
+            attori.innerHTML = "";
             films[index].attori.forEach(attore => {
                 attori.innerHTML += "<li>" + attore + "</li>";
             });
 
-            genere.innerHTML = '';
+            genere.innerHTML = "";
             films[index].genere.forEach(genereFilm => {
                 genere.innerHTML += genereFilm + " ";
             });
@@ -94,26 +98,64 @@
 
         mostraFilm(contatore);
 
-        var btnPrev = document.querySelector('#prev');
-        var btnNext = document.querySelector('#next');
+        var btnPrev = document.querySelector("#prev");
+        var btnNext = document.querySelector("#next");
 
         function nextMovie(){
-            contatore++;
+            if(contatore >= films.length - 1){
+                contatore = 0;
+            }else{
+                contatore++;
+            }
             mostraFilm(contatore);
         }
 
         function prevMovie(){
-            contatore--;
+            if(contatore == 0){
+                contatore = films.length - 1;
+            }else{
+                contatore--;
+            }
             mostraFilm(contatore);
         }
 
-        btnPrev.addEventListener('click', prevMovie);
+        btnPrev.addEventListener("click", prevMovie);
 
-        btnNext.addEventListener('click', nextMovie);
-
-
+        btnNext.addEventListener("click", nextMovie);
 
 
+        /**
+         * Creare i link titolo del film alla pagina wikipedia.
+         * Creare i link agli attori alle singole pagine di ciascun attore.
+         * Gestire la rotazione delle Locandine.
+         * Non toccare l'array di Film, no no no.
+         * Bootstrap, inserire qualche classe affinché non sia terrificante.
+         * Centrare nella pagina tutte le informazioni.
+         * I pulsanti avanti e indietro devono essere messi a dx e sx della locandina.
+         * 
+         **/
+         
+
+         //JSON - JavaScript Object Notation
+         //Stringify() trasforma un oggetto JS in una stringa
+         var mieiFilmJSON = JSON.stringify(films);
+         console.log(mieiFilmJSON);
+
+         
+         //dalle API riceveremo sempre e solo stringhe
+        
+         var mioObjJSON = '[{"titolo":"Il buono, il brutto e il cattivo","durata":120,"anno":1967,"locandina":"https://movieplayer.net-cdn.it/t/images/2014/06/12/buonobruttocattivo_jpg_400x0_crop_q85.jpg","genere":["western","drammatico"],"attori":["Clint Eastwood","Lee van Cleef","Gian Maria Volontè"]},{"titolo":"Tre uomini e una gamba","durata":100,"anno":1997,"locandina":"https://m.media-amazon.com/images/I/71g7bXFYMZL._SL1000_.jpg","genere":["commedia"],"attori":["Aldo Baglio","Giovanni Storti","Giacomino Poretti"]},{"titolo":"Matrix","durata":180,"anno":1999,"locandina":"https://www.warnerbros.it/wp-content/uploads/2015/09/Matrix_Poster.jpg","genere":["Scifi","drammatico"],"attori":["Keanu Reeves","Carrie-Ann Moss","Laurence Fishbourne","Hugo Weaving"]}]';
+
+        console.log( mioObjJSON[0].anno );
+
+        //Per trasformare la stringa in un object che posso manipolare con JS
+        //JSON.parse() trasforma una stringa in oggetto JS
+        var mioObj = JSON.parse(mioObjJSON);
+
+        console.log(mioObj);
+        console.log(mioObj[0].titolo);
+
+        
     </script>
 </body>
 </html>
