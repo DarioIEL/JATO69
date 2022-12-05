@@ -88,7 +88,6 @@ function ObjCostruttore(nome, cognome, presenza){
 
 var objVero = new ObjCostruttore(obj.nome, obj.cognome, obj.presenza);
 
-
 ObjCostruttore.prototype.annullaPresenza = function(){
     this.presenza = false;
 }
