@@ -67,6 +67,8 @@ function aggiungiNuovoStudente() {
             console.log("Ok, registrazione avvenuta");
         }
         )
+
+        return false;
 }
 
 var form = document.querySelector('#formRegistrazione');
@@ -74,3 +76,25 @@ form.addEventListener('submit', aggiungiNuovoStudente);
 
 // var btn = document.querySelector('#btn');
 // btn.addEventListener('click', aggiungiNuovoStudente);
+
+fetch(URLStudenti)
+    .then(data => {
+        return data.json()
+    })
+    .then(response => {
+
+        console.log(response);
+        mostraStudenti(response);
+    });
+
+var elencoStudenti = document.querySelector('#listaStudenti');
+
+function mostraStudenti(listaStudenti){
+    listaStudenti.forEach(studente => {
+        var id = studente.id;
+        var nome = studente.nome;
+        var tipo = studente.tipologia;
+
+        elencoStudenti.innerHTML += "<li>Studente: " + id + " " + nome + " " + tipo + "</li>";
+    });
+}
