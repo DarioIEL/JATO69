@@ -58,5 +58,5 @@ Provare sempre a chiudere e riavvirare VSC prima di modificare le Execution Poli
 
 Settare Execution Policy
 1. Start di Windows -> Powershell -> tastoDestro Esegui come Amministratore
-2. Digitare: setExecutionPolicy Unrestricted -> premi Invio
+2. Digitare: Set-ExecutionPolicy Unrestricted -> premi Invio
 3. Digitare T per "a tutti" -> Premi Invio 

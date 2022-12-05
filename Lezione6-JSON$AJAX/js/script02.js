@@ -37,3 +37,40 @@ fetch(urlDoc)
         console.log(response);
 
     });
+
+
+//fetch con metodo POST
+var URLStudenti = "http://localhost:3000/studenti";
+
+function aggiungiNuovoStudente() {
+
+    var nome = document.querySelector('#nome').value;
+    var tipologia = document.querySelector('#tipologia').value;
+    
+    var nuovoStudente = {
+        nome: nome,
+        tipologia: tipologia
+    };
+
+    fetch(URLStudenti, {
+            method: "POST",
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(nuovoStudente)
+        })
+        .then(data => {
+            data.json()
+        })
+        .then(response =>{
+
+            console.log("Ok, registrazione avvenuta");
+        }
+        )
+}
+
+var form = document.querySelector('#formRegistrazione');
+form.addEventListener('submit', aggiungiNuovoStudente);
+
+// var btn = document.querySelector('#btn');
+// btn.addEventListener('click', aggiungiNuovoStudente);
