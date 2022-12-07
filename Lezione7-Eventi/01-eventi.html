@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <button id="btn" >Saluta</button>
+    <br>
+    <div id="mioDiv" class="dimDiv" ></div>
+
+    <script>
+        function miaFunzione(utente) {
+            console.log(event);
+            console.log("Ciao " + utente);
+        }
+
+        function altraFunz(){
+            console.log("Sei col mouse sul pulsante.")
+        }
+
+        var btn = document.querySelector('#btn');
+
+        // btn.onclick = miaFunzione;
+
+        //Event Listener
+        btn.addEventListener('click', function(){
+           //faccio qualcosa, poi ...
+           var nomeUtente = "Dario"
+           miaFunzione(nomeUtente);
+        }); 
+        
+        //se non ho il terzo parametro, di default è false
+        
+        btn.addEventListener('mouseenter', altraFunz);
+
+        var mioDiv = document.querySelector('#mioDiv');
+
+        function cambiaColore(){
+            mioDiv.classList.add("coloreDiv")
+        }
+
+        function togliColore(){
+            mioDiv.classList.remove("coloreDiv")
+        }
+
+        mioDiv.addEventListener('mouseenter', cambiaColore);
+        mioDiv.addEventListener('mouseleave', togliColore);
+
+        //Giochino: con l'evento mousemove cambia colore al movimento del mouse
+
+
+    </script>
+</body>
+</html>

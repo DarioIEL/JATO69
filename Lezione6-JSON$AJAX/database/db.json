@@ -18,22 +18,17 @@
   ],
   "studenti": [
     {
-      "id": 1,
-      "nome": "Abel",
-      "tipologia": "studente"
-    },
-    {
-      "nome": "prova",
+      "nome": "Anna",
       "tipologia": "studente",
       "id": 2
     },
     {
-      "nome": "Gennarino",
+      "nome": "Prova",
       "tipologia": "studente",
       "id": 3
     },
     {
-      "nome": "Anna",
+      "nome": "dario",
       "tipologia": "studente",
       "id": 4
     }

@@ -2,6 +2,8 @@ var URLStudenti = "http://localhost:3000/studenti";
 
 var elencoStudenti = document.querySelector('#listaStudenti');
 
+var mioElenco = [];
+
 function mostraStudenti(listaStudenti){
     listaStudenti.forEach(studente => {
         var id = studente.id;
@@ -13,13 +15,18 @@ function mostraStudenti(listaStudenti){
 }
 
 //fetch con metodo POST
-function aggiungiNuovoStudente() {
+function aggiungiNuovoStudente(event) {
 
     var nome = document.querySelector('#nome').value;
     var tipologia = document.querySelector('#tipologia').value;
-    
-    var nuovoStudente = {
-        nome: nome,
+
+    if(nome == "" || tipologia == -1){
+        // ..non fare nulla
+        event.preventDefault();
+    }else{
+
+        var nuovoStudente = {
+            nome: nome,
         tipologia: tipologia
     };
 
@@ -40,6 +47,7 @@ function aggiungiNuovoStudente() {
         )
 
         return false;
+    }
 }
 
 var form = document.querySelector('#formRegistrazione');
@@ -50,7 +58,8 @@ form.addEventListener('submit', aggiungiNuovoStudente);
 
 fetch(URLStudenti)
     .then(data => {
-        return data.json()
+        console.log(data.status);
+        return data.json();
     })
     .then(response => {
 
@@ -63,3 +72,5 @@ fetch(URLStudenti)
 //endpoint DELETE http://localhost:3000/studenti/idStudente
 //la tipologia dello studente può essere scelta partendo da una select : corsista, apprendista, assunto 
 //controllare che vengano inseriti tutti i dati altrimenti non viene eseguita la request. Ricorda: event.preventDefault()
+
+//Parte di Milo: inserire Bootstrap; layout: affiancare form e liste; usare list-group; Ovviamente il form va fatto con le classi di Bootstrap
