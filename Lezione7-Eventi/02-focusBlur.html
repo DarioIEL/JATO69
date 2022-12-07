@@ -12,10 +12,10 @@
     <h1>Benvenuto</h1>
     <h2>Compila il form</h2>
 
-    <form action="http://www.example.org" method="post">
+    <form action="http://www.example.org" id="mioForm" method="get">
         Username: <input type="text" id="username"><br>
-        Password: <input type="password" id="password"><br>
-
+        Codice Fiscale: <input type="text" id="codFis"><br>
+        Password: <input type="text" id="password"><br>
         <input type="submit" value="Registrati">
     </form>
     
@@ -24,6 +24,16 @@
     <script>
         var feed = document.querySelector('#feed');
         var username = document.querySelector('#username');
+        var codFis = document.querySelector('#codFis');
+        var password = document.querySelector('#password');
+        var mioForm = document.querySelector('#mioForm');
+
+        //regex
+        const FORMATO_CF = /^[A-Z]{6}[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{3}[A-Z]*$/i;
+
+        //regex pass: minimo 8 caratteri; almeno una minuscola; almeno una MAIUS; almeno un numero; almeno un carattere speciale tra @$!%*?&
+        const FORMATO_PW = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
 
         function suggerisciUser(){
             feed.removeAttribute("class");
@@ -35,6 +45,7 @@
             if(lungUser < 5){
                 feed.innerHTML = "Il tuo Username è troppo corto";
                 feed.setAttribute("class", "txtRed");
+                event.preventDefault();
             }else{
                 feed.innerHTML = "";
             }
@@ -57,9 +68,34 @@
             console.log(event)
         }
 
+        function controllaPassword(){
+            if(!password.value.match(FORMATO_PW)){
+                feed.innerHTML += "La tua password non rispetta il formato <br>";
+                event.preventDefault();
+            }
+        }
+
+        function controllaCodFisc(){
+            if(!codFis.value.match(FORMATO_CF)){
+                feed.innerHTML += "Il tuo codice fiscale non è valido <br>";
+                event.preventDefault();
+            }
+        }
+
+        function validate(){
+            feed.innerHTML = "";
+            controllaUser();
+            controllaCodFisc();
+            controllaPassword();
+        }
+
+
         username.addEventListener('focus', suggerisciUser);
         username.addEventListener('blur', controllaUser);
         username.addEventListener('keyup', coloraBordo);
+
+        mioForm.addEventListener('submit', validate);
+
 
 
     </script>

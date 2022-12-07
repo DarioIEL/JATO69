@@ -16,23 +16,7 @@
       "tipologia": "superuser"
     }
   ],
-  "studenti": [
-    {
-      "nome": "Anna",
-      "tipologia": "studente",
-      "id": 2
-    },
-    {
-      "nome": "Prova",
-      "tipologia": "studente",
-      "id": 3
-    },
-    {
-      "nome": "dario",
-      "tipologia": "studente",
-      "id": 4
-    }
-  ],
+  "studenti": [],
   "creator": {
     "nome": "Dario",
     "cognome": "Mennillo",
