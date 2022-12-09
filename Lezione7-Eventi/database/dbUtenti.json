@@ -1,0 +1,47 @@
+{
+  "autore": {"nome": "Dario"},
+  "utenti": [
+    {
+      "username": "Dario Mennillo",
+      "codFis": "mnndra77f23r432s",
+      "password": "pipPo123!",
+      "nazionalita": "US",
+      "id": 1
+    },
+    {
+      "username": "",
+      "codFis": "",
+      "password": "",
+      "nazionalita": "-1",
+      "id": 2
+    },
+    {
+      "username": "asdasd",
+      "codFis": "mnndra77f23r432s",
+      "password": "pipPo123!",
+      "nazionalita": "UK",
+      "id": 3
+    },
+    {
+      "username": "Dario Mennillo",
+      "codFis": "sptgnn88e12f765e",
+      "password": "pipPo123!",
+      "nazionalita": "UK",
+      "id": 4
+    },
+    {
+      "username": "Dario Mennillo",
+      "codFis": "mnndra77f23r432s",
+      "password": "pipPo123!",
+      "nazionalita": "ITA",
+      "id": 5
+    },
+    {
+      "username": "Dario Mennillo",
+      "codFis": "sptgnn88e12f765e",
+      "password": "pipPo123!",
+      "nazionalita": "ESP",
+      "id": 6
+    }
+  ]
+}
